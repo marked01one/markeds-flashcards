@@ -1,0 +1,84 @@
+<!-- cards/templates/cards/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<head>
+
+<style>
+    /* Styling for the app */
+    :root {
+        --accent: #6e48ad;
+        --accent-bg: white;
+        --bg: #C1EFFF;
+        --text: #212121;
+        --text-light: #585858;
+        --border: #d8dae1;
+        --code: #d81b60;
+        --preformatted: #444;
+    }
+
+    body>header {
+        background-color: #C1EFFF;
+        border-bottom: 0px;
+    }
+
+    article {
+        background-color: #FFDBA4;
+        border: 0px;
+        border-radius: 5px;
+        padding: 1em;
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    h2, h4 {
+        margin-top: 0;
+    }
+
+    hr {
+        background: var(--accent);
+        border-color: var(--accent);
+    }
+
+    button, a[role="button"], input[type="submit"] {
+        background-color: #FF8787;
+        color: #FFE9AE;
+        text-decoration: none;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        background-color: #FFECEF;
+        color: #E26868;
+        font-weight: 500;
+    }
+
+    a[class="nav"] {
+        background-color: #FFF5E4;
+        font-weight: 600;
+    }
+
+    input[id="cancel"] {
+        background-color: #B270A2;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>My Flashcards App</h1>
+        {% include "cards/navigation.html" %}
+    </header>
+    
+    <main>
+        {% block content %}
+            <h2>Welcome to your Flashcard App!</h2>
+        {% endblock content %}
+    </main>
+</body>

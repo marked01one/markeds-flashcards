@@ -1,0 +1,28 @@
+<!-- cards/templates/cards/card_form.html -->
+<!-- Manages the Card Editing feature of the page -->
+
+{% extends "cards/base.html" %}
+
+{% block content %}
+    <!-- Show "Edit Card" if the "card_form.html" receives "card" data -->
+    {% if card %}
+        <h3>✏️ Edit Card</h3>
+    {% else %}
+        <h3>✨ Create New Card</h3>
+    {% endif %}
+    
+    <form method="POST">
+        <!-- Security measure to prevent cross-site request forgery -->
+        {% csrf_token %}
+        <!-- "form.as_p" would render Django forms as paragraphs -->
+        {{ form.as_p }}
+        <input type="submit" value="Save New Card">
+    </form>
+    <form action='{% url 'card-list' %}'>
+        <input type="submit" value="Cancel" id="cancel"/>
+    </form>
+    {% comment %} <a href="{% url 'card-list' %}" role="button", id="return">
+        Return to Flashcards
+    </a> {% endcomment %}
+{% endblock content %}
+
