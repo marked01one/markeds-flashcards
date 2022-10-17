@@ -1,0 +1,25 @@
+<!-- cards/templates/cards/card_list.html -->
+
+{% extends 'cards/base.html' %}
+{% load humanize %}
+
+{% block content %}
+    <h2>My Cards</h2>
+    <a href='{% url 'card-create' %}' role="button">
+        ✨ Create New Card
+    </a>
+    <!-- Generates all flashcards in database -->
+    {% for card in card_list %}
+        <!--
+            Create a new h3 element for a new box if box (headline) value changes.
+         -->
+        {% ifchanged %}
+            <!-- 
+                Using "ordinal" method in Django's "humanize" filter set
+                Use pipe, or "|", to apply the method
+            -->
+            <h3>📁 {{ card.box | ordinal }} Attempt:</h3>
+        {% endifchanged %}
+        {% include "cards/card.html" %}
+    {% endfor %}
+{% endblock content %}
