@@ -1,0 +1,26 @@
+<!-- cards/templates/cards/box.html -->
+<!-- Shows all cards within a particular box -->
+
+{% extends 'cards/base.html' %}
+{% load humanize %}
+
+{% block content %}
+    <h2>📄 {{ box_number | ordinal }} Attempt</h2>
+    <a href='{% url 'card-create' %}' role="button">
+        ✨ Create New Card
+    </a>
+    <div >
+        <h3 class="box-lines">
+            {% if not object_list %}
+                Hmm, it seems that there's nothing here yet... 🤔
+            {% elif box_number == 1 %}
+                Your 1st try at these cards. You got this!🥰
+            {% else %}
+                You're on the {{ box_number | ordinal }} level with these cards. Keep it up!🥳 
+            {% endif %}
+        </h3>
+    </div>
+    {% for card in object_list %}
+        {% include "cards/card.html" %}
+    {% endfor %}
+{% endblock content %}

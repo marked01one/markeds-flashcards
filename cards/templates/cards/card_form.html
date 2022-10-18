@@ -12,7 +12,7 @@
     {% endif %}
     
     <form method="POST">
-        <!-- Security measure to prevent cross-site request forgery -->
+        <!-- Security token to prevent cross-site request forgery (CSRF) -->
         {% csrf_token %}
         <!-- "form.as_p" would render Django forms as paragraphs -->
         {{ form.as_p }}
@@ -21,8 +21,5 @@
     <form action='{% url 'card-list' %}'>
         <input type="submit" value="Cancel" id="cancel"/>
     </form>
-    {% comment %} <a href="{% url 'card-list' %}" role="button", id="return">
-        Return to Flashcards
-    </a> {% endcomment %}
 {% endblock content %}
 
