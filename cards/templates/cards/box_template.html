@@ -1,0 +1,15 @@
+<!-- cards/templates/cards/box_links.html -->
+
+{% load humanize %}
+
+{% for box in boxes %}
+    <a href="{% url 'box' box_num=box.number %}" class="nav">
+        {% if box.number <= 3 %}🌳 
+        {% elif box.number <= 6 %}⛰️ 
+        {% elif box.number <= 9 %}⛅
+        {% else %}🌟 {% endif %}
+
+        Lvl. {{ box.number }} <mark>{{ box.card_count }}</mark>
+    </a>
+
+{% endfor %}

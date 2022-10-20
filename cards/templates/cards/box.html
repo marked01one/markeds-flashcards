@@ -5,22 +5,32 @@
 {% load humanize %}
 
 {% block content %}
-    <h2>📄 {{ box_number | ordinal }} Attempt</h2>
-    <a href='{% url 'card-create' %}' role="button">
-        ✨ Create New Card
-    </a>
-    <div >
-        <h3 class="box-lines">
+    <div align="center">
+        <h2>
+            {% if box_number <= 3 %}🌳 
+            {% elif box_number <= 6 %}⛰️ 
+            {% elif box_number <= 9 %}⛅
+            {% else %}🌟 {% endif %}
+
+            {{ box_number | ordinal }} Attempt
+        </h2>
+        <p>
+            <mark>{{ object_list | length }} ({{ object_list | length | apnumber }})</mark> card left at this level
+        </p>
+    </div>
+    <div>
+        <!-- Display an according message depending on how many cards are in a box -->
+        <h3 class="box-lines" align="center">
             {% if not object_list %}
                 Hmm, it seems that there's nothing here yet... 🤔
             {% elif box_number == 1 %}
                 Your 1st try at these cards. You got this!🥰
             {% else %}
-                You're on the {{ box_number | ordinal }} level with these cards. Keep it up!🥳 
+                You're on level {{ box_number | apnumber }} with these cards. Keep it up!🥳 
             {% endif %}
         </h3>
     </div>
-    {% for card in object_list %}
-        {% include "cards/card.html" %}
-    {% endfor %}
+    {% if check_card %}
+        {% include "cards/card.html" with card=check_card %}
+    {% endif %}
 {% endblock content %}

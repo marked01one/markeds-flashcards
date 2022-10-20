@@ -1,12 +1,15 @@
 from multiprocessing.managers import BaseManager
 from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
 )
 
+from cards.forms import CardCheckForm
 from .models import Card
+import random
 
 # Class for creating a list of flashcards
 class CardListView(ListView):
@@ -26,6 +29,7 @@ class CardUpdateView(CardCreateView, UpdateView):
 # Class for viewing contents of a single box
 class BoxView(CardListView):
     template_name: str = "cards/box.html"
+    form_class = CardCheckForm
     
     # Return a queryset of all card objects that fall under a specific box number
     def get_queryset(self):
@@ -34,4 +38,20 @@ class BoxView(CardListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["box_number"] = self.kwargs["box_num"]
+        if self.object_list:
+            context["check_card"] = random.choice(self.object_list)
         return context
+
+    # Handle incoming POST requests from the flashcard options 
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # Find the required Card object or returns a 404 error
+            card = get_object_or_404(Card, id=form.cleaned_data["card_id"])
+            
+            # Move the card to the next level if solved == True, return card to 1st level otherwise
+            card.move(form.cleaned_data["solved"])
+        
+        # Redirect the POST request to the same page from which the POST request originates
+        # "HTTP_REFERER" is holding the original URL of the POST, which is stored in the .META object of the request
+        return redirect(request.META.get('HTTP_REFERER'))

@@ -1,6 +1,8 @@
 <!-- cards/templates/cards/navigation.html -->
 <!-- The page's navigation menu -->
+{% load cards_tags %}
 
 <nav>
     <a href="{% url 'card-list' %}" class="nav">🗂️ All Cards</a>
+    {% boxes_as_links %}
 </nav>
