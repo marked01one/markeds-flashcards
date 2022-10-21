@@ -1,11 +1,6 @@
+# Marked's Flashcard App
 
-<header>
-    <h1>Marked's Flashcard App</h1>
-    <p>A full-stack Django-based web app that will help you ace your next test!</p>
-</header>
+A full-stack Django-based web app that will help you ace your next test!
 
 
-
-
-<h2 align="center">Features</h2>
 
