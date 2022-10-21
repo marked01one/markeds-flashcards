@@ -1,8 +1,29 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: url(../fonts/Comfortaa-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Amatic_SC";
+    src: url(../fonts/AmaticSC-Bold.ttf);
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+/**************************** CLASSES ****************************/
+
 :root {
     --accent: #C1EFFF;
     --accent-bg: white;
-    --bg: #C1EFFF;
-    --text: #212121;
+    --bg: #261C2C;
+    --text: #787A91;
     --text-light: #585858;
     --border: #d8dae1;
     --code: #d81b60;
@@ -10,20 +31,45 @@
 }
 
 body>header {
-    background-color: #C1EFFF;
+    background-color: #b8e2f1;
+}
+
+body {
+    background-color: #DAEAF1;
     border-bottom: 0px;
+    
 }
 
 article {
+    animation: fadeIn 1.0s;
     background-color: #FFDBA4;
     border: 0px;
     border-radius: 5px;
+    color: #d84b88;
     padding: 1em;
     margin: 1em 0;
     text-align: center;
 }
 
-h2 {
+p[class="answer"] {
+    font-family: Comfortaa;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+p[class="question"] {
+    font-family: Caveat;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+
+h1, h2, h3 {
+    color: #d84b88;
+    font-family: Comfortaa;
+}
+
+h1, h2 {
     text-align: center;
 }
 
@@ -31,10 +77,12 @@ h2, h4 {
     margin-top: 0;
 }
 
+
 hr {
     background: var(--accent);
     border-color: var(--accent);
 }
+
 
 button, a[role="button"], input[type="submit"] {
     background-color: #FF8787;
@@ -50,9 +98,10 @@ input, select, textarea {
     font-weight: 500;
 }
 
-a[class="nav"] {
+.nav {
     background-color: #FFF5E4;
     font-weight: 600;
+    text-align: center;
 }
 
 input[id="cancel"] {

@@ -19,7 +19,14 @@
                 Using "ordinal" method in Django's "humanize" filter set
                 Use pipe, or "|", to apply the method
             -->
-            <h3>📁 {{ card.box | ordinal }} Attempt:</h3>
+            <h3>
+                {% if card.box == 10 %}
+                    📁 Final Level: 
+                {% else %}
+                    📁 Level {{ card.box | apnumber | capfirst }}:
+                {% endif %}
+            </h3>
+            
         {% endifchanged %}
         {% include "cards/card.html" %}
     {% endfor %}

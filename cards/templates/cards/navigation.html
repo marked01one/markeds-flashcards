@@ -2,7 +2,10 @@
 <!-- The page's navigation menu -->
 {% load cards_tags %}
 
+
 <nav>
-    <a href="{% url 'card-list' %}" class="nav">🗂️ All Cards</a>
+    <div>
+        <a href="{% url 'card-list' %}" class="nav">🗂️ All Cards</a>
+    </div>
     {% boxes_as_links %}
 </nav>

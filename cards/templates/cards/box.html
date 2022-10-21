@@ -7,12 +7,12 @@
 {% block content %}
     <div align="center">
         <h2>
-            {% if box_number <= 3 %}🌳 
-            {% elif box_number <= 6 %}⛰️ 
-            {% elif box_number <= 9 %}⛅
-            {% else %}🌟 {% endif %}
-
-            {{ box_number | ordinal }} Attempt
+            {% if box_number <= 3 %}🌳 Level {{ box_number | apnumber | capfirst }}
+            {% elif box_number <= 6 %}⛰️ Level {{ box_number | apnumber | capfirst }}
+            {% elif box_number <= 9 %}⛅ Level {{ box_number | apnumber | capfirst }}
+            {% else %}🌟 Final Level{% endif %}
+            
+            
         </h2>
         <p>
             <mark>{{ object_list | length }} ({{ object_list | length | apnumber }})</mark> card left at this level
@@ -22,11 +22,13 @@
         <!-- Display an according message depending on how many cards are in a box -->
         <h3 class="box-lines" align="center">
             {% if not object_list %}
-                Hmm, it seems that there's nothing here yet... 🤔
+                Hmm, it seems that there's nothing here... 🤔
             {% elif box_number == 1 %}
                 Your 1st try at these cards. You got this!🥰
+            {% elif box_number == 10 %}
+                Congrats! You've reached the final level. Take a break and celebrate!🥳 
             {% else %}
-                You're on level {{ box_number | apnumber }} with these cards. Keep it up!🥳 
+                You're on Level {{ box_number | apnumber | upper }} with these cards. Keep it up!🤩 
             {% endif %}
         </h3>
     </div>
