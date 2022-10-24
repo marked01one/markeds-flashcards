@@ -1,6 +1,8 @@
 <div align="center">
   <h1>Marked's Flashcards</h1>
 
+  <img src="static/images/flashcards_site.png" width="50%">
+
   A full-stack Django-based web app that will help you ace your next test!
 </div>
 
