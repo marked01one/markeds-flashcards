@@ -1,6 +1,8 @@
 from random import choices
 from types import new_class
+from urllib import request
 from django.db import models
+from django.conf import settings
 
 # Indicate how many boxes are in the app
 NUM_BOXES = 10

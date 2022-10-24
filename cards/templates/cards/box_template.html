@@ -4,7 +4,7 @@
 
 {% for box in boxes %}
 
-        <a href="{% url 'box' box_num=box.number %}" class="nav">
+        <a href="{% url 'box' box_num=box.number %}" class="boxes">
             {% if box.number <= 3 %}🌳 
             {% elif box.number <= 6 %}⛰️ 
             {% elif box.number <= 9 %}⛅

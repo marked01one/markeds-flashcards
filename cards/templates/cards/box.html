@@ -1,7 +1,7 @@
 <!-- cards/templates/cards/box.html -->
 <!-- Shows all cards within a particular box -->
 
-{% extends 'cards/base.html' %}
+{% extends 'cards/index.html' %}
 {% load humanize %}
 
 {% block content %}
@@ -14,8 +14,8 @@
             
             
         </h2>
-        <p>
-            <mark>{{ object_list | length }} ({{ object_list | length | apnumber }})</mark> card left at this level
+        <p id="cards-left">
+            <mark>{{ object_list | length }} ({{ object_list | length | apnumber }})</mark> card{{ object_list | length | pluralize }} left at this level
         </p>
     </div>
     <div>

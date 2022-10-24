@@ -1,5 +1,6 @@
 # cards/forms.py
 
+from ctypes.wintypes import BOOLEAN
 from django.forms import BooleanField, Form, IntegerField
 
 class CardCheckForm(Form):
@@ -11,3 +12,6 @@ class CardCheckForm(Form):
     # `solved` is NOT required since you can leave the field unchecked if you don't know the answer.
     card_id = IntegerField(required=True)
     solved = BooleanField(required=False)
+
+    
+    
