@@ -15,7 +15,13 @@
             
         </h2>
         <p id="cards-left">
-            <mark>{{ object_list | length }} ({{ object_list | length | apnumber }})</mark> card{{ object_list | length | pluralize }} left at this level
+            <mark>
+            {% if not object_list %}
+                0 (zero)
+            {% else %}
+                {{ object_list | length }} ({{ object_list | length | apnumber }})
+            {% endif %}
+            </mark>card{{ object_list | length | pluralize }} left at this level
         </p>
     </div>
     <div>

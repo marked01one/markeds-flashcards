@@ -5,10 +5,11 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 
 from cards.forms import CardCheckForm
-from .models import Card
+from .models import Card, Group
 import random
 
 # Class for creating a list of flashcards
@@ -55,3 +56,8 @@ class BoxView(CardListView):
         # Redirect the POST request to the same page from which the POST request originates
         # "HTTP_REFERER" is holding the original URL of the POST, which is stored in the .META object of the request
         return redirect(request.META.get('HTTP_REFERER'))
+
+class NewGroupView(CreateView):
+    model = Group
+    fields: list = ["name", "description"]
+    success_url = reverse_lazy('new-group')

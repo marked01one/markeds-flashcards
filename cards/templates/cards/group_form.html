@@ -1,0 +1,17 @@
+{% extends "cards/index.html" %}
+
+{% block content %}
+    <!-- Show "Edit Card" if the "card_form.html" receives "card" data -->
+    <h3>✨ Create New Group</h3>
+    
+    <form method="POST">
+        <!-- Security token to prevent cross-site request forgery (CSRF) -->
+        {% csrf_token %}
+        <!-- "form.as_p" would render Django forms as paragraphs -->
+        {{ form.as_table }}
+        <input type="submit" value="Save New Group">
+    </form>
+    <form action='{% url 'card-list' %}'>
+        <input type="submit" value="Cancel" id="cancel"/>
+    </form>
+{% endblock content %}

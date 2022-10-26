@@ -22,5 +22,10 @@ urlpatterns = [
         "box/<int:box_num>",
         views.BoxView.as_view(),
         name="box",
+    ),
+    path(
+        "new_group",
+        views.NewGroupView.as_view(),
+        name="new-group",
     )
 ]

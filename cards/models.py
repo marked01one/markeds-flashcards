@@ -31,3 +31,9 @@ class Card(models.Model):
             self.save()
         
         return self
+
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=280)
+    
+    pass
