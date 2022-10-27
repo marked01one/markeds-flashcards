@@ -2,11 +2,13 @@
 
 <form method="post">
     {% csrf_token %}
-    <input type="hidden" name="card_id" value="{{ card.id }}">
-    <input type="hidden" name="solved" value="{{ solved }}">
-    {% if solved %}
-        <input type="submit" value="✅ I know"/>
-    {% else %}
-        <input type="submit" value="❌ I don't know"/>
-    {% endif %}
+    <div>
+        <input type="hidden" name="card_id" value="{{ card.id }}">
+        <input type="hidden" name="solved" value="{{ solved }}">
+        {% if solved %}
+            <input type="submit" value="✅ I know"/>
+        {% else %}
+            <input type="submit" value="❌ I don't know"/>
+        {% endif %}
+    </div>
 </form>

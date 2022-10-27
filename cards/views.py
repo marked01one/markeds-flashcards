@@ -20,7 +20,7 @@ class CardListView(ListView):
 # Class for creating a new card
 class CardCreateView(CreateView):
     model: object = Card
-    fields: list = ["question", "answer", "box"]
+    fields: list = ["question", "answer"]
     success_url = reverse_lazy("card-create")
 
 # Class for updating the values of a card
@@ -61,3 +61,12 @@ class NewGroupView(CreateView):
     model = Group
     fields: list = ["name", "description"]
     success_url = reverse_lazy('new-group')
+
+class GroupView(ListView):
+    model: object = Group
+    
+    def get_queryset(self, **kwargs):
+        return Card.objects.filter(name=self.model.name)
+    
+    def get_context_data(self, **kwargs):
+        pass

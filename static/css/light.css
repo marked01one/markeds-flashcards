@@ -56,13 +56,15 @@ article {
 
 p[class="answer"] {
     font-family: Comfortaa;
-    font-size: 28px;
+    font-size: 1.5vw;
     font-weight: 600;
+    font-style: italic;
 }
 
 p[class="question"] {
+    margin-top: 0.5rem;
     font-family: Caveat;
-    font-size: 32px;
+    font-size: 1.5vw;
     font-weight: 400;
 }
 
@@ -90,8 +92,11 @@ hr {
 button, a[role="button"], input[type="submit"] {
     background-color: #FF8787;
     color: #FFE9AE;
+    margin-left: 8px;
+    margin-right: 8px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.8vw;
 }
 
 input, select, textarea {
@@ -99,11 +104,16 @@ input, select, textarea {
     background-color: #FFECEF;
     color: #E26868;
     font-weight: 500;
+    font-size: 0.8vw;
 }
 
 a[class="boxes"] {
     background-color: #FFF5E4;
+    font-size: 1vw;
     font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 6px;
     text-align: center;
 }
 
@@ -111,8 +121,13 @@ input[id="cancel"] {
     background-color: #B270A2;
 }
 
+input[type="submit"] {
+    font-size: 0.5vw;
+}
+
 #all_cards {
     color: #FFE9AE;
+    font-size: 1vw;
 }
 
 #cards-left {
