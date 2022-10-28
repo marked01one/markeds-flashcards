@@ -27,5 +27,10 @@ urlpatterns = [
         "new_group",
         views.NewGroupView.as_view(),
         name="new-group",
+    ),
+    path(
+        "group/<str:group_name>",
+        views.GroupView.as_view(),
+        name="group",
     )
 ]

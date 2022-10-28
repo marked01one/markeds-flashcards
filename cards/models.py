@@ -14,7 +14,7 @@ NUM_GROUPS = 1
 
 # Allow iteration through range of 1 -> 5 (more user-friendly) instead of 0 -> 4
 BOXES = range(1, NUM_BOXES + 1)
-GROUPS = ["No Category"]
+GROUPS = ["", "OOP", "Data Structures", "Digital Logic"]
 
 # Class that model the card objects of the app
 class Card(models.Model):
@@ -25,9 +25,11 @@ class Card(models.Model):
         default=BOXES[0],
     )
     group_name = models.CharField(
-        choices=zip(GROUPS, GROUPS),
+        choices=zip(
+            GROUPS, GROUPS
+        ),
         max_length=100,
-        default="No Category"    
+        default=""    
     )
     date_created = models.DateTimeField(auto_now_add=True)
     
@@ -45,7 +47,7 @@ class Card(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=100)
-    desc = models.CharField(max_length=280, blank=True, default="")
+    description = models.CharField(max_length=280, default="")
     
     def __str__(self) -> str:
         GROUPS.append(self.name)

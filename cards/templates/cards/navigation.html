@@ -1,11 +1,13 @@
 <!-- cards/templates/cards/navigation.html -->
 <!-- The page's navigation menu -->
 {% load cards_tags %}
+{% load group_tags %}
 {% load static %}
 
 <nav>
     <div>
         <a href="{% url 'card-list' %}" role="button" id="all_cards">🗂️ All Cards</a>
+        {% groups_as_links %}
     </div>
     {% boxes_as_links %}
 </nav>

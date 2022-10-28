@@ -1,0 +1,11 @@
+<!-- cards/templates/cards/group_template.html -->
+
+{% load humanize %}
+
+{% for group in groups %}
+
+        <a href="{% url 'group' group_name=group.name %}" role="button">
+            {{ group.name }} 
+            <mark>{{ group.cards_per_group }}</mark>
+        </a>
+{% endfor %}

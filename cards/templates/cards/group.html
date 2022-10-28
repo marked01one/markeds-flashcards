@@ -1,0 +1,23 @@
+
+
+{% extends 'cards/index.html' %}
+{% load humanize %}
+
+{% block content %}
+    <div align="center">
+        <h2>{{ group_name }}</h2>
+        <p id="cards-left">
+            <mark>
+            {% if not object_list %}
+                0 (zero)
+            {% else %}
+                {{ object_list | length }} ({{ object_list | length | apnumber }})
+            {% endif %}
+            </mark>card{{ object_list | length | pluralize }} in this group
+        </p>
+    </div>
+    <h3 class="box-lines" align="center">{{ group.description }}</h3>
+    {% for card in card_list %}
+        {% include "cards/card.html" %}
+    {% endfor %}
+{% endblock content %}
