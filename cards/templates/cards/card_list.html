@@ -5,29 +5,16 @@
 {% load humanize %}
 
 {% block content %}
-    <h2>My Cards</h2>
+    <h2>📚 All Cards</h2>
     <div align="center">
         <a href='{% url 'card-create' %}' role="button">✨ Create New Card</a>
         <a href='{% url 'new-group' %}' role="button">✨ Create New Group</a>
     </div>
     <!-- Generates all flashcards in database -->
     {% for card in card_list %}
-        <!--
-            Create a new h3 element for a new box if box (headline) value changes.
-         -->
-        {% ifchanged %}
-            <!-- 
-                Using "ordinal" method in Django's "humanize" filter set
-                Use pipe, or "|", to apply the method
-            -->
-            <h3 align="center">
-                {% if card.box == 10 %}
-                    📁 Final Level 
-                {% else %}
-                    📁 Level {{ card.box | apnumber | capfirst }}
-                {% endif %}
-            </h3>
-            
+        <!-- Create a new h3 element for a new box if 'group_name' value changes.-->
+        {% ifchanged card.group_name %}
+            <h3>📘 {{ card.group_name }}:</h3> 
         {% endifchanged %}
         {% include "cards/card.html" %}
     {% endfor %}

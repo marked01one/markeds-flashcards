@@ -9,22 +9,19 @@
     <title>Marked's Flashcards</title>
     <link rel="icon" href="{% static 'images/note_taking.ico' %}">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link id="themes" href="{% static 'css/light.css' %}" rel="stylesheet" type="text/css"/>
-
-    
-    
+    <link class="themes" href="{% static 'css/light.css' %}" rel="stylesheet" type="text/css"/>
 <head>
 
 <body>
     <header>
         <h1 class="page-header">Marked's Flashcards</h1>
         {% include "cards/navigation.html" %}
-        
     </header>
-    
     <main>
         {% block content %}
             <h2>Welcome to your Flashcard App!</h2>
         {% endblock content %}
     </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 </body>
