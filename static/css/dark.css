@@ -22,22 +22,24 @@
 :root {
     --accent: #1F1D36;
     --accent-bg: white;
+    --small-text: #E9A6A6;
     --bg: #261C2C;
-    --text: #787A91;
+    --text: #864879;
     --text-light: #585858;
     --border: #d8dae1;
     --code: #d81b60;
     --preformatted: #444;
+    --cards: #344374;
 }
 
 body>header {
-    background-color: #3F3351;
+    background-color: #1F1D36;
+    border-color: #1F1D36;
 }
 
 body {
-    background-color: #DAEAF1;
+    background-color: #3F3351;
     border-bottom: 0px;
-    
 }
 
 main {
@@ -45,10 +47,10 @@ main {
 }
 
 article {
-    background-color: #FFDBA4;
+    background-color: var(--cards);
     border: 0px;
     border-radius: 5px;
-    color: #d84b88;
+    color: var(--small-text);
     padding: 1em;
     margin: 1em 0;
     text-align: center;
@@ -70,7 +72,7 @@ p[class="question"] {
 
 
 h1, h2, h3 {
-    color: #d84b88;
+    color: var(--text);
     font-family: Comfortaa;
 }
 
@@ -90,7 +92,7 @@ hr {
 
 
 button, a[role="button"], input[type="submit"] {
-    background-color: #FF8787;
+    background-color: #685086;
     color: #FFE9AE;
     text-decoration: none;
     font-weight: 600;
@@ -111,13 +113,21 @@ input, select, textarea {
 }
 
 a[class="boxes"] {
-    background-color: #FFF5E4;
+    background-color: #C996CC;
+    border-width: 0;
     font-size: 1vw;
     font-weight: 600;
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 6px;
     text-align: center;
+}
+
+.groups {
+    background-color: #344374;
+    color: var(--small-text);
+    font-size: 1vw;
+    text-decoration: none;
 }
 
 input[id="cancel"] {
@@ -128,9 +138,13 @@ input[type="submit"] {
     font-size: 1vw;
 }
 
-#all_cards {
+.main-tabs, .theme-toggler {
     color: #FFE9AE;
     font-size: 1vw;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
 }
 
 #cards-left {

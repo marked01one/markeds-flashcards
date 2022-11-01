@@ -6,8 +6,13 @@
 
 <nav>
     <div>
-        <a href="{% url 'card-list' %}" role="button" id="all_cards">🗂️ All Cards</a>
+        <a href="{% url 'card-list' %}" role="button" class="main-tabs">🗂️ All Cards</a>
+        <a role="button" class="theme-toggler">☀️ Light Theme</a>
+    </div>
+    <div>
         {% groups_as_links %}
     </div>
-    {% boxes_as_links %}
+    <div>
+        {% boxes_as_links %}
+    </div>
 </nav>
