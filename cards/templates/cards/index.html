@@ -28,7 +28,8 @@
         {% endblock content %}
     </main>
     <div class="js">
-        <script type="text/javscript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type="text/javscript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script type="text/javscript" src="{% static 'js/jquery.js' %}"></script>
         <script>
             const light_css = "{% static 'css/light.css' %}";
             const dark_css = "{% static 'css/dark.css' %}";

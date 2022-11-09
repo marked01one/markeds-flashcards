@@ -1,8 +1,17 @@
 <div align="center">
   <h1>Marked's Flashcards</h1>
-  <img src="static/images/flashcards_site.png" width="50%">
+  <img src="static/images/flashcard_site_new.png" width="50%">
   <p>A full-stack Django-based web app that will help you ace your next test!</p>
 </div>
+
+<div align="center">
+  <h2 align="center">Demo Website</h2>
+  <a href="https://markeds-flashcards.up.railway.app">https://markeds-flashcards.up.railway.app</a>
+</div>
+<strong>NOTE:</strong> If the website is current down, chances are I have ran out of execution hours on Railway :(
+
+
+
 
 <h2 align="center">Getting Started</h2>
 

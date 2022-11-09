@@ -23,6 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-shh5*-p@!_-t8hkm60fo_jx@nycn)f%4x!+f4$9@dfxqa#-p$k'
 
+CSRF_TRUSTED_ORIGINS = ["https://markeds-flashcards.up.railway.app"]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
