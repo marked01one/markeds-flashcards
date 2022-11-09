@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'images/note_taking.ico' %}">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link class="themes" href="{% static 'css/light.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" class="themes" href="{% static 'css/light.css' %}">
 <head>
 
 <body>
@@ -28,7 +28,7 @@
         {% endblock content %}
     </main>
     <div class="js">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type="text/javscript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
             const light_css = "{% static 'css/light.css' %}";
             const dark_css = "{% static 'css/dark.css' %}";
