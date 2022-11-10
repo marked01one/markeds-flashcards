@@ -7,7 +7,7 @@
         <p class="answer">{{card.answer}}</p>
         <div>
             <a href="{% url 'card-update' card.id %}" role="button">✏️ Edit Card </a>
-            <a href="{% url 'card-update' card.id %}" role="button">✏️ Delete Card </a>
+            <a href="{% url 'card-update' card.id %}" role="button">🗑️ Delete Card </a>
         </div>
     {% else %}
         <details>
