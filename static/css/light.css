@@ -54,7 +54,7 @@ article {
 
 p[class="answer"] {
     font-family: Comfortaa;
-    font-size: 1.5vw;
+    font-size: 28px;
     font-weight: 600;
     font-style: italic;
 }
@@ -70,6 +70,7 @@ p[class="question"] {
 h1, h2, h3 {
     color: #d84b88;
     font-family: Comfortaa;
+    font-weight: 600;
 }
 
 h1, h2 {
@@ -86,18 +87,21 @@ hr {
     border-color: var(--accent);
 }
 
-
 button, a[role="button"], input[type="submit"] {
     background-color: #FF8787;
     color: #FFE9AE;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.8vw;
+    font-size: 14px;
 }
 
 button, a[role="button"] {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 8px;
+}
+
+.col-12 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input, select, textarea {
@@ -110,12 +114,13 @@ input, select, textarea {
 
 a[class="boxes"] {
     background-color: #FFF5E4;
-    font-size: 1vw;
+    font-size: 14px;
     font-weight: 600;
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 6px;
     text-align: center;
+    text-decoration: none;
 }
 
 input[id="cancel"] {

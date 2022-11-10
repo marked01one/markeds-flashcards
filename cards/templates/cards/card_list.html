@@ -6,9 +6,13 @@
 
 {% block content %}
     <h2>📚 All Cards</h2>
-    <div align="center">
-        <a href='{% url 'card-create' %}' role="button">✨ Create New Card</a>
-        <a href='{% url 'new-group' %}' role="button">✨ Create New Group</a>
+    <div align="center" class="row">
+        <div class="col-12 col-md-4">
+            <a href='{% url 'card-create' %}' role="button">✨ Create New Card</a>
+        </div>
+        <div class="col-12 col-md-4">
+            <a href='{% url 'new-group' %}' role="button">✨ Create New Group</a>
+        </div>
     </div>
     <!-- Generates all flashcards in database -->
     {% for card in card_list %}

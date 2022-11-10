@@ -57,7 +57,7 @@ article {
 
 p[class="answer"] {
     font-family: Comfortaa;
-    font-size: 1.5vw;
+    font-size: 28px;
     font-weight: 600;
     font-style: italic;
 }
@@ -73,6 +73,7 @@ p[class="question"] {
 h1, h2, h3 {
     color: var(--text);
     font-family: Comfortaa;
+    font-weight: 600;
 }
 
 h1, h2 {
@@ -95,12 +96,12 @@ button, a[role="button"], input[type="submit"] {
     color: #FFE9AE;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.8vw;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 button, a[role="button"] {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin: 8px;
 }
 
 input, select, textarea {
@@ -114,26 +115,32 @@ input, select, textarea {
 a[class="boxes"] {
     background-color: #C996CC;
     border-width: 0;
-    font-size: 1vw;
+    font-size: 14px;
     font-weight: 600;
     margin-top: 4px;
     margin-bottom: 4px;
     padding: 6px;
     text-align: center;
+    text-decoration: none;
 }
 
 .groups {
     background-color: #344374;
     color: var(--small-text);
-    font-size: 1vw;
+    font-size: 14px;
     text-decoration: none;
+}
+
+.col-12 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input[id="cancel"] {
     background-color: #B270A2;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
     font-size: 1vw;
 }
 
@@ -149,4 +156,4 @@ a, a:visited, a:hover, a:active {
 #cards-left {
     font-family: Comfortaa;
     font-weight: 600;
-}
+} */

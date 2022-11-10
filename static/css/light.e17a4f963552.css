@@ -1,44 +1,41 @@
 @font-face {
     font-family: "Comfortaa";
-    src: url(../fonts/Comfortaa-VariableFont_wght.ttf);
+    src: url("../fonts/Comfortaa-VariableFont_wght.0f0ea204488f.ttf");
 }
 
 @font-face {
     font-family: "Caveat";
-    src: url(../fonts/Caveat-VariableFont_wght.ttf);
+    src: url("../fonts/Caveat-VariableFont_wght.7519ccd6f7c0.ttf");
 }
 
 @font-face {
     font-family: "Amatic_SC";
-    src: url(../fonts/AmaticSC-Bold.ttf);
+    src: url("../fonts/AmaticSC-Bold.fc2cf6f52e5e.ttf");
 }
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
-
 :root {
-    --accent: #1F1D36;
+    --accent: #C1EFFF;
     --accent-bg: white;
-    --small-text: #E9A6A6;
     --bg: #261C2C;
-    --text: #864879;
+    --text: #787A91;
     --text-light: #585858;
     --border: #d8dae1;
     --code: #d81b60;
     --preformatted: #444;
-    --cards: #344374;
 }
 
 body>header {
-    background-color: #1F1D36;
-    border-color: #1F1D36;
+    background-color: #b8e2f1;
 }
 
 body {
-    background-color: #3F3351;
+    background-color: #DAEAF1;
     border-bottom: 0px;
+    
 }
 
 main {
@@ -46,10 +43,10 @@ main {
 }
 
 article {
-    background-color: var(--cards);
+    background-color: #FFDBA4;
     border: 0px;
     border-radius: 5px;
-    color: var(--small-text);
+    color: #d84b88;
     padding: 1em;
     margin: 1em 0;
     text-align: center;
@@ -71,7 +68,7 @@ p[class="question"] {
 
 
 h1, h2, h3 {
-    color: var(--text);
+    color: #d84b88;
     font-family: Comfortaa;
     font-weight: 600;
 }
@@ -90,18 +87,21 @@ hr {
     border-color: var(--accent);
 }
 
-
 button, a[role="button"], input[type="submit"] {
-    background-color: #685086;
+    background-color: #FF8787;
     color: #FFE9AE;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
-    text-decoration: none;
 }
 
 button, a[role="button"] {
     margin: 8px;
+}
+
+.col-12 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 input, select, textarea {
@@ -113,8 +113,7 @@ input, select, textarea {
 }
 
 a[class="boxes"] {
-    background-color: #C996CC;
-    border-width: 0;
+    background-color: #FFF5E4;
     font-size: 14px;
     font-weight: 600;
     margin-top: 4px;
@@ -124,36 +123,20 @@ a[class="boxes"] {
     text-decoration: none;
 }
 
-.groups {
-    background-color: #344374;
-    color: var(--small-text);
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.col-12 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 input[id="cancel"] {
     background-color: #B270A2;
 }
 
-/* input[type="submit"] {
+input[type="submit"] {
     font-size: 1vw;
 }
 
-.main-tabs, .theme-toggler {
+#main_tabs {
     color: #FFE9AE;
     font-size: 1vw;
-}
-
-a, a:visited, a:hover, a:active {
-    color: inherit;
 }
 
 #cards-left {
     font-family: Comfortaa;
     font-weight: 600;
-} */
+}
