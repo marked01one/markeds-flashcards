@@ -1,4 +1,5 @@
-$("a.theme-toggler").click(function (e) { 
+$("a.theme-toggler").click( () => { 
+    
     if ($('link.themes').attr('href') == "/static/css/light.css")
     {
         $("a.theme-toggler").html("🌑 Dark Theme");
