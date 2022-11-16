@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Comfortaa";
-    src: url(../fonts/Comfortaa-VariableFont_wght.ttf);
+    src: url("../fonts/Comfortaa-VariableFont_wght.0f0ea204488f.ttf");
 }
 
 @font-face {
     font-family: "Caveat";
-    src: url(../fonts/Caveat-VariableFont_wght.ttf);
+    src: url("../fonts/Caveat-VariableFont_wght.7519ccd6f7c0.ttf");
 }
 
 @font-face {
     font-family: "Amatic_SC";
-    src: url(../fonts/AmaticSC-Bold.ttf);
+    src: url("../fonts/AmaticSC-Bold.fc2cf6f52e5e.ttf");
 }
 @keyframes fadeIn {
     0% { opacity: 0; }

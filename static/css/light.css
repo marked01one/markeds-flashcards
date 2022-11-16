@@ -109,7 +109,7 @@ input, select, textarea {
     background-color: #FFECEF;
     color: #E26868;
     font-weight: 500;
-    font-size: 0.8vw;
+    font-size: 14px;
 }
 
 a[class="boxes"] {
@@ -125,15 +125,6 @@ a[class="boxes"] {
 
 input[id="cancel"] {
     background-color: #B270A2;
-}
-
-input[type="submit"] {
-    font-size: 1vw;
-}
-
-#main_tabs {
-    color: #FFE9AE;
-    font-size: 1vw;
 }
 
 #cards-left {
