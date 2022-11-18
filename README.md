@@ -1,25 +1,43 @@
 <div align="center">
-  <h1>Marked's Flashcards</h1>
+
+  # Marked's Flashcards
+
   <img src="static/images/flashcard_site_new.png" width="50%">
-  <p><em>A full-stack Django-based web app that will help you ace your next test!</em></p>
+  
+  _**A full-stack Django-based web app that will help you ace your next test!**_
+
   <hr width="50%">
-  <h3><strong>Demo Website: <a href="https://markeds-flashcards.up.railway.app">https://markeds-flashcards.up.railway.app</a></strong></h3>
-  <em>NOTE: If the website is current down, chances are I have ran out of execution hours on Railway :(</em>
+  
+  ### **Demo Website: [https://markeds-flashcards.up.railway.app](https://markeds-flashcards.up.railway.app)**
+
+  _NOTE: If the website is current down, chances are I have ran out of credits on Railway :(_
+
+  <hr width="50%">
+
 </div>
-<hr>
+
 
 <h2 align="center">Getting Started</h2>
 
-All files within this repository are necessary to run both the server-side and client-side aspects of the server.
+### 1. Requirements:
+
+Here is all the dependencies for the program, which can be found in `requirements.txt`. Ignore `gunicorn` and `Pillow` since those are for deployment purposes.
+
+```
+asgiref==3.5.2
+Django==4.0.4
+django-jquery==3.1.0
+gunicorn==20.1.0
+Pillow==9.1.0
+sqlparse==0.4.3
+tzdata==2022.5
+whitenoise==6.2.0
+```
+
 In addition, you will also need to download:
-<ul>
-  <li>
-    <a href="https://www.python.org/downloads/">Python</a> (3.10 or above)
-  </li>
-  <li>
-    <a href="https://www.djangoproject.com/download/">Django</a> (check the link for more details)
-  </li>
-</ul>
+
+* [Python](https://www.python.org/downloads/) (3.10 or more)
+* [Django](https://www.djangoproject.com/download/) (check the link for more details)
 
 <h2 align="center">Running the App</h2>
 
@@ -31,21 +49,20 @@ Open PowerShell and change your current directory to the program's directory:
 ```
 cd C:\Documents\Flashcard-App
 ```
-<h3>1. Setting up a virtual environment</h3>
-<ul>
-  <li>Activate a virtual environment to host your application by typing: <code>./venv/Scripts/Activate.ps1</code></li>
-  <li>You should get something like this:</li>
-</ul>
+
+### 1. Setting up a virtual environment
+
+* Activate a virtual environment to host your application by typing: `./venv/Scripts/Activate.ps1`
+* You should get something similar to this:
 
 ```
 (venv) PS <C:\Documents\Flashcard-App> 
 ```
 
-<h3>2. Activate the application</h3>
-<ul>
-  <li>Activate the server-side of the application by typing: <code>python manage.py runserver</code></li>
-  <li>After waiting a for a few seconds, you should receive:</li>
-</ul>
+### 1. Activate the application
+
+* Activate the server-side of the application by typing: `python manage.py runserver`
+* After waiting a for a few seconds, you should receive:
 
 ```
 System check identified no issues (0 silenced).
@@ -55,9 +72,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK. 
 ```
 
-<ul>
-  <li>Open the HTTP link in your browser of choice and voila! You've done it!</li>
-</ul>
+* Open the HTTP link in your browser of choice and voila! You've done it!
 
 
 
