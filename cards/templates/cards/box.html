@@ -24,6 +24,7 @@
             {% endif %}
             </mark>card{{ object_list | length | pluralize }} left at this level
         </p>
+        <a href='{% url 'card-list' %}' role="button">Return to All Cards</a>
     </div>
     <div>
         <!-- Display an according message depending on how many cards are in a box -->

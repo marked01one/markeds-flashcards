@@ -32,5 +32,15 @@ urlpatterns = [
         "group/<str:group_name>",
         views.GroupView.as_view(),
         name="group",
+    ),
+    path(
+        "delete/<int:pk>",
+        views.CardDeleteView.as_view(),
+        name="card-delete"
+    ),
+    path(
+        "group/delete/<str:group_name>",
+        views.CardDeleteView.as_view(),
+        name="group-delete"
     )
 ]

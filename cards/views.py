@@ -27,6 +27,11 @@ class CardCreateView(CreateView):
 class CardUpdateView(CardCreateView, UpdateView):
     success_url = reverse_lazy("card-list")
 
+class CardDeleteView(DeleteView):
+    model: object = Card
+    queryset: Card.objects.filter(answer=Card.answer)
+    success_url = reverse_lazy("card-delete")
+
 # Class for viewing contents of a single box
 class BoxView(CardListView):
     template_name: str = "cards/box.html"
@@ -61,6 +66,10 @@ class NewGroupView(CreateView):
     model = Group
     fields: list = ["name", "description"]
     success_url = reverse_lazy('new-group')
+    
+class GroupDeleteView(DeleteView):
+    
+    pass
 
 class GroupView(CardListView, Group):
     template_name: str = "cards/group.html"

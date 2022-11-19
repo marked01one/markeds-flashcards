@@ -15,6 +15,7 @@
             {% endif %}
             </mark>card{{ object_list | length | pluralize }} in this group
         </p>
+        <a href='{% url 'card-list' %}' role="button">Return to All Cards</a>
     </div>
     <h3 class="box-lines" align="center">{{ group.description }}</h3>
     {% for card in card_list %}

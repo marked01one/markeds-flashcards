@@ -5,7 +5,7 @@
 {% for group in groups %}
 
         <a href="{% url 'group' group_name=group.name %}" role="button" class="groups">
-            {{ group.name }} 
+            🗂️ {{ group.name }} 
             <mark>{{ group.cards_per_group }}</mark>
         </a>
 {% endfor %}
