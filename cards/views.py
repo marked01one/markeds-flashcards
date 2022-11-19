@@ -1,6 +1,6 @@
 from multiprocessing.managers import BaseManager
-from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse_lazy, reverse
+from django.shortcuts import get_object_or_404, redirect, HttpResponseRedirect
 from django.views.generic import (
     ListView,
     CreateView,
@@ -29,8 +29,8 @@ class CardUpdateView(CardCreateView, UpdateView):
 
 class CardDeleteView(DeleteView):
     model: object = Card
-    queryset: Card.objects.filter(answer=Card.answer)
-    success_url = reverse_lazy("card-delete")
+    template_name: str = "cards/card_confirm_delete.html"
+    success_url = reverse_lazy("card-list")
 
 # Class for viewing contents of a single box
 class BoxView(CardListView):
@@ -71,17 +71,17 @@ class GroupDeleteView(DeleteView):
     
     pass
 
-class GroupView(CardListView, Group):
+class GroupView(ListView):
+    model: object = Group
     template_name: str = "cards/group.html"
     
     def get_queryset(self):
-        return Card.objects.filter(group_name=self.kwargs['group_name'])
+        return Card.objects.filter(group_name=self.model.name)
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["group_name"] = self.kwargs["group_name"]
-        for group in Group.objects.all():
-            if self.kwargs['group_name'] == group.name:
-                context['description'] = group.description
+        group_obj = self.model.objects.filter(name=self.kwargs["group_name"])
+        context["name"] = group_obj.values_list("name", flat=True)[0]
+        context['group_description'] = group_obj.values_list("description", flat=True)[0]
         return context
         

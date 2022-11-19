@@ -5,7 +5,7 @@
 
 {% block content %}
     <div align="center">
-        <h2>{{ group_name }}</h2>
+        <h2>{{ name }}</h2>
         <p id="cards-left">
             <mark>
             {% if not object_list %}
@@ -16,8 +16,9 @@
             </mark>card{{ object_list | length | pluralize }} in this group
         </p>
         <a href='{% url 'card-list' %}' role="button">Return to All Cards</a>
+        <h3>{{ group_description }}</h3>
     </div>
-    <h3 class="box-lines" align="center">{{ group.description }}</h3>
+    
     {% for card in card_list %}
         {% include "cards/card.html" %}
     {% endfor %}

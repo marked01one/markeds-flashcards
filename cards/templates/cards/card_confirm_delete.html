@@ -1,0 +1,32 @@
+{% extends 'cards/index.html' %}
+
+{% block content %}
+
+<div align="center">
+    <h3>🗑️ Do You Wish to Delete This Card?</h3>
+    <hr>
+    <article>
+        <p class="question">{{ card.question }}</p>
+        <p class="answer">{{card.answer}}</p>
+    </article>
+    <div align="center" class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST">
+                <!-- Security token to prevent cross-site request forgery (CSRF) -->
+                {% csrf_token %}
+                <!-- "form.as_p" would render Django forms as paragraphs -->
+                {{ form.as_p }}
+                <input type="submit" value="Delete This Card">
+            </form>
+        </div>
+        <div class="col-12 col-md-6">
+            <form action={% url 'card-list' %}>
+                <input type="submit" value="Return to All Cards">
+            </form>
+        </div>
+    </div>
+</div>
+    
+
+{% endblock content %}
+

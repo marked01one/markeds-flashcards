@@ -14,20 +14,26 @@ NUM_GROUPS = 1
 
 # Allow iteration through range of 1 -> 5 (more user-friendly) instead of 0 -> 4
 BOXES = range(1, NUM_BOXES + 1)
-GROUPS = ["", "OOP", "Data Structures", "Digital Logic"]
+
+class Group(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=280, default="")
+    
+    def __str__(self) -> str:
+        return self.name
+
+GROUPS = Group.objects.all().values_list('name', flat=True)
 
 # Class that model the card objects of the app
 class Card(models.Model):
     question = models.CharField(max_length=280)
     answer = models.CharField(max_length=100)
     box = models.IntegerField(
-        choices=zip(BOXES, BOXES),
+        choices=zip(BOXES,BOXES),
         default=BOXES[0],
     )
     group_name = models.CharField(
-        choices=zip(
-            GROUPS, GROUPS
-        ),
+        choices=zip(GROUPS,GROUPS),
         max_length=100,
         default=""    
     )
@@ -45,10 +51,3 @@ class Card(models.Model):
         
         return self
 
-class Group(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=280, default="")
-    
-    def __str__(self) -> str:
-        GROUPS.append(self.name)
-        return self.name
