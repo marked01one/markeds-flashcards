@@ -18,7 +18,7 @@
         {{ form.as_p }}
         <input type="submit" value="Save New Card">
     </form>
-    <form action='{% url 'card-list' %}'>
+    <form action="{% url 'card-list' %}">
         <input type="submit" value="Cancel" id="cancel"/>
     </form>
 {% endblock content %}

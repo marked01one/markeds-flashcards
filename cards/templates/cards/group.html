@@ -5,7 +5,7 @@
 
 {% block content %}
     <div align="center">
-        <h2>{{ name }}</h2>
+        <h2>{{ group_name }}</h2>
         <p id="cards-left">
             <mark>
             {% if not object_list %}
@@ -15,8 +15,16 @@
             {% endif %}
             </mark>card{{ object_list | length | pluralize }} in this group
         </p>
-        <a href='{% url 'card-list' %}' role="button">Return to All Cards</a>
-        <h3>{{ group_description }}</h3>
+        <p class="description">{{ group_description }}</p>
+        <hr>
+        <div class="row">
+            <form action={% url 'card-create' %} class="col-12 col-md-6">
+                <input type="submit" value="Create New Card"/>
+            </form>
+            <form action={% url 'card-list' %} class="col-12 col-md-6">
+                <input type="submit" value="Return to All Cards"/>
+            </form>
+        </div>
     </div>
     
     {% for card in card_list %}

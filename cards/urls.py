@@ -38,9 +38,4 @@ urlpatterns = [
         views.CardDeleteView.as_view(),
         name="card-delete"
     ),
-    path(
-        "group/delete/<str:group_name>",
-        views.CardDeleteView.as_view(),
-        name="group-delete"
-    )
 ]

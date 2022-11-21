@@ -67,7 +67,7 @@ p[class="question"] {
 }
 
 
-h1, h2, h3 {
+h1, h2, h3, .description {
     color: #d84b88;
     font-family: Comfortaa;
     font-weight: 600;
@@ -97,6 +97,10 @@ button, a[role="button"], input[type="submit"] {
 
 button, a[role="button"] {
     margin: 8px;
+}
+
+.description {
+    font-style: italic;
 }
 
 .col-12 {
